@@ -10,7 +10,7 @@ var options = {
 function setup() {
   createCanvas(320, 240);
   background(160);
-  
+  video = createCapture(options);
 
   textSize(20);
   textAlign(CENTER, CENTER);
@@ -23,8 +23,8 @@ function draw() {
   drawWords(width * 0.95, height * 0.95);
 }
 
-
-
-function startS(){
-  video = createCapture(options);
+function drawWords(x, y) {
+  fill(0);
+  text(video.height, x, y);
+  text(video.width, x-50, y);
 }
