@@ -2,6 +2,13 @@ var video;
 
 function setup() {
   createCanvas(320, 240);
+  var constraints = {
+    audio: false,
+    video: {
+      facingMode: {
+        exact: "environment"
+      }
+    }};
   background(160);
   video = createCapture(VIDEO);
   //video.hide();
