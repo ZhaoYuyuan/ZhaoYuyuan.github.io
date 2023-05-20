@@ -1,16 +1,16 @@
 var video;
-
+var options = {
+  video: {
+     
+      facingMode: {
+       exact: "environment"
+     }
+  }
+};
 function setup() {
   createCanvas(320, 240);
-  var constraints = {
-    audio: false,
-    video: {
-      facingMode: {
-        exact: "environment"
-      }
-    }};
   background(160);
-  video = createCapture(VIDEO);
+  video = createCapture(options);
   //video.hide();
   // Set text characteristics
   textSize(20);
