@@ -6,6 +6,7 @@ var options = {
      }
   }
 };
+
 function setup() {
   createCanvas(320, 240);
   background(160);
@@ -17,6 +18,7 @@ function setup() {
 
 function draw() {
   background(160);
+  image(video,0,0);
   textAlign(CENTER);
   drawWords(width * 0.95, height * 0.95);
 }
