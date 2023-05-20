@@ -1,32 +1,58 @@
-var video;
+var capture;
+let switchFlag = false;
+let switchBtn;
+
 var options = {
-  video: {
-     
-      facingMode: {
-       exact: "user"
+     video: {
+        
+         facingMode: {
+          exact: "user"
+        }
      }
-  }
-};
+   };
+
 function setup() {
-  createCanvas(320, 240);
-  background(160);
-  video = createCapture(options);
+  createCanvas(390, 240);
+  
+  capture = createCapture(options);
+  
+  switchBtn = createButton('Switch Camera');
+  switchBtn.position(19, 19);
+  switchBtn.mousePressed(switchCamera);
+  
+  
 
-  textSize(20);
-  textAlign(CENTER, CENTER);
 }
 
-function draw() {
-  background(160);
-  textAlign(CENTER);
-  drawWords(width * 0.95, height * 0.95);
-}
+function switchCamera()
+{
+  switchFlag = !switchFlag;
+  if(switchFlag==true)
+  {
+   capture.remove();
+   options = {
+     video: {
+        
+         facingMode: {
+          exact: "environment"
+        }
+     }
+   };
 
-function drawWords(x, y) {
-  // The text() function needs three parameters:
-  // the text to draw, the horizontal position,
-  // and the vertical position
-  fill(0);
-  text(video.height, x, y);
-  text(video.width, x-50, y);
+  }
+  else
+  {
+   capture.remove();
+   options = {
+     video: {
+        
+         facingMode: {
+          exact: "user"
+        }
+     }
+   };
+    
+  }
+  capture = createCapture(options);
+  
 }
