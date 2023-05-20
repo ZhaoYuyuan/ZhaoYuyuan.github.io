@@ -3,7 +3,7 @@ var options = {
   video: {
      
       facingMode: {
-       exact: "environment"
+       exact: "user"
      }
   }
 };
@@ -11,8 +11,7 @@ function setup() {
   createCanvas(320, 240);
   background(160);
   video = createCapture(options);
-  //video.hide();
-  // Set text characteristics
+
   textSize(20);
   textAlign(CENTER, CENTER);
 }
