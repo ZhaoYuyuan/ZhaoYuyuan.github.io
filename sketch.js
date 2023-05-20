@@ -1,7 +1,6 @@
 var video;
 var options = {
   video: {
-     
       facingMode: {
        exact: "enviorment"
      }
