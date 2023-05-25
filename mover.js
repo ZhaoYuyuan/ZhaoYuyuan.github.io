@@ -34,7 +34,11 @@ class Mover {
     }
 
     updateP() {
-        this.mouse = createVector(random(width), random(height));
+        if (acSwitch == 0) {
+            this.mouse = createVector(random(width), random(height));
+        } else if (acSwitch == 1) {
+            this.mouse = createVector(random(width / 3, width / 3 * 2), random(height / 3, height / 3 * 2));
+        }
         //mouse = p5.Vector.random2D();
     }
 
@@ -58,7 +62,7 @@ class Mover {
         } else if (colorSwitch == 1) {
             paintLayer.fill(gr, gg, gb);
         }
-        
+
         paintLayer.ellipse(this.pos.x, this.pos.y, 20);
     }
 }
