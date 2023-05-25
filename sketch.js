@@ -150,7 +150,7 @@ function draw() {
     }
     moverDis.show();
   }
-  drawWords(width * 0.95, height * 0.95);
+  drawWords(width * 0.95, height);
   disGlobal = 0;
 
   image(video, 0, 0);
@@ -166,10 +166,7 @@ function draw() {
 }
 
 function drawWords(x, y) {
-  paintLayer.fill(0);
-  paintLayer.rect(x - 20, y - 20, 100, 40);
   paintLayer.fill(255);
-
   paintLayer.text(disGlobal, x, y);
 
 }
