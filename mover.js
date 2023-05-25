@@ -5,6 +5,7 @@
 // https://thecodingtrain.com/learning/nature-of-code/1.6-acceleration-vector.html
 // https://editor.p5js.org/codingtrain/sketches/OjCfrdWX
 
+
 class Mover {
     constructor(x, y) {
         this.pos = createVector(x, y);
@@ -12,24 +13,24 @@ class Mover {
         this.vel = p5.Vector.random2D();
         this.vel.mult(random(3));
         this.mouse = createVector(random(width), random(height));
-        let i = floor(random(0,3));
-        if (i == 0){
+        let i = floor(random(0, 3));
+        if (i == 0) {
             this.r = 0;
             this.g = random(255);
             this.b = random(255);
-        } 
-        if (i == 1){
+        }
+        if (i == 1) {
             this.r = random(255);
             this.g = 0;
             this.b = random(255);
         }
-        if (i == 2){
+        if (i == 2) {
             this.r = random(255);
             this.g = random(255);
             this.b = 0;
         }
         console.log(i);
- 
+
     }
 
     updateP() {
@@ -43,7 +44,7 @@ class Mover {
         this.acc.setMag(1);
 
         this.vel.add(this.acc);
-        this.vel.limit(2);
+        this.vel.limit(veli);
 
         this.pos.add(this.vel);
     }
@@ -52,7 +53,12 @@ class Mover {
 
         paintLayer.noStroke();
         //paintLayer.fill(random(255),random(255),random(255));
-        paintLayer.fill(this.r,this.g,this.b);
+        if (colorSwitch == 0) {
+            paintLayer.fill(this.r, this.g, this.b);
+        } else if (colorSwitch == 1) {
+            paintLayer.fill(gr, gg, gb);
+        }
+        
         paintLayer.ellipse(this.pos.x, this.pos.y, 20);
     }
 }
