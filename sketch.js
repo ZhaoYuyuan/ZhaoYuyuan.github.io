@@ -107,7 +107,7 @@ function draw() {
 
     glitch.loadImage(video);
     glitch.limitBytes(map(random(height), 0, height, 0, 1));
-    glitch.randomBytes(20);
+    glitch.randomBytes(80);
     glitch.buildImage();
   }
   if (dotsAll.length >= 80) {
