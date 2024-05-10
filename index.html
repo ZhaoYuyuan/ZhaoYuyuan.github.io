@@ -13,10 +13,14 @@
 </head>
 	
 <script type="text/javascript"> 
-      addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); 
-      function hideURLbar(){ 
-                window.scrollTo(0,1); 
-      } 
+	addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); 
+	function hideURLbar(){
+	window.scrollTo(0,1); 
+	} 
+	$('div').css("height",window.innerHeight+100);  //强制让内容超过  
+	window.scrollTo(0, 1);  
+	$("div").css("height",window.innerHeight);  //重置成新高度  
+	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);  //如果不想让页面滑动，可以加上这段代码
 </script>
 	
 <body>
